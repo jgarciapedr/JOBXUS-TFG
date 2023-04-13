@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<!--MENCIONES-->
+<!--ICONO USUARIO: https://www.flaticon.es/icono-gratis/usuario_10288625?term=user&page=2&position=22&origin=search&related_id=10288625-->
+<!--ICONO LUPA: https://www.flaticon.es/icono-gratis/lupa_64673?term=lupa&page=1&position=4&origin=search&related_id=64673-->
+<!--ICONO CORAZON: https://www.flaticon.com/free-icon/heart_9131566?term=heart&page=1&position=27&origin=search&related_id=9131566-->
+<!--ICONO INFO: https://www.flaticon.com/free-icon/info_167801?term=info&page=1&position=21&origin=search&related_id=167801-->
+<!--COLORES INVERTIDOS CON: https://pinetools.com/es/invertir-colores-->
+
+<!--CURSOR:POINTER https://datoweb.com/post/13-como-hacer-que-aparezca-la-mano-del-cursor-cuando-me-situo-encima/-->
+<!--DROPDOWN: https://getbootstrap.com/docs/4.0/components/dropdowns/-->
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>JOBXUS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+      integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
+      integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
+      crossorigin="anonymous"
+    ></script>
+    <script src="funciones.js" defer></script>
+    <style>
+      * {
+      }
+      /*Menú de navegación lateral*/
+      nav {
+        background-color: #2e8b57;
+        height: 100vh;
+        width: 150px;
+        float: left;
+        position: fixed;
+      }
+
+      /*logo*/
+      .logo {
+        margin-left: 25px;
+        margin-top: 20px;
+      }
+
+      /*titulo bajo el logo*/
+      .titulo-pagina {
+        text-align: center;
+        color: white;
+      }
+
+      /*separador para el menú de navegacion*/
+      .separador {
+        width: 150px;
+        height: calc(100vh / 8);
+      }
+
+      /*item del menú de navegación*/
+      .item {
+        width: 150px;
+        height: calc(100vh / 7);
+        text-align: center;
+      }
+      /*imagen del item*/
+      .img-item {
+        margin-left: 23px;
+        cursor: pointer;
+      }
+      .img-item:hover {
+        border: 3px solid #2e8b57;
+      }
+
+      /*ultimo item, info*/
+      .info {
+        margin-top: 40px;
+      }
+
+      /*CUERPO*/
+      .cuerpo {
+        margin-left: 150px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!--MENÚ DE NAVEGACIÓN LATERAL-->
+    <nav>
+      <!--LOGO-->
+      <div class="row">
+        <div class="col-12">
+          <img src="img/logo-blanco.png" alt="logo" width="100" class="logo" />
+        </div>
+      </div>
+      <!--TITULO PÁGINA-->
+      <div class="row">
+        <div class="col-12">
+          <h1 class="h2 titulo-pagina">JOB<big>X</big>US</h1>
+        </div>
+      </div>
+      <!--SEPARADOR-->
+      <div class="separador"></div>
+      <!--ITEMS-->
+      <div class="row item">
+        <div class="col-12" id="usuario" onclick="cambiarIcon('usuario')">
+          <img
+            src="img/usuario.png"
+            alt="usuario"
+            width="50%"
+            class="usuario img-item"
+          />
+        </div>
+      </div>
+
+      <div class="row item">
+        <div class="col-12" id="buscar" onclick="cambiarIcon('buscar')">
+          <img
+            src="img/lupa-blanco.png"
+            alt="buscar"
+            width="50%"
+            class="buscar img-item"
+          />
+        </div>
+      </div>
+
+      <div class="row item">
+        <div class="col-12" id="favorito" onclick="cambiarIcon('favorito')">
+          <img
+            src="img/favorito.png"
+            alt="favorito"
+            width="50%"
+            class="favorito img-item"
+          />
+        </div>
+      </div>
+
+      <div class="info row item">
+        <div
+          class="col-12 dropdown"
+          id="dropdownMenuButton"
+          onclick="cambiarIcon('info')"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          <img
+            src="img/info.png"
+            alt="info"
+            width="30%"
+            class="info img-item"
+          />
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">Aviso legal</a>
+            <a class="dropdown-item" href="#">Política de Cookies</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div id="cuerpo" class="cuerpo">
+      <form>
+        <div class="form-group">
+          <label for="inputName">Nombre:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="inputName"
+            placeholder="Ingrese el nombre"
+          />
+        </div>
+        <div class="form-group">
+          <label for="selectCategory">Categoría:</label>
+          <select class="form-control" id="selectCategory">
+            <option value="">Todas</option>
+            <option value="1">Categoría 1</option>
+            <option value="2">Categoría 2</option>
+            <option value="3">Categoría 3</option>
+          </select>
+        </div>
+        <select name="ubicacion">
+          <option value="">Selecciona una ubicación</option>
+          <optgroup label="Andalucía">
+            <option value="Almería">Almería</option>
+            <option value="Cádiz">Cádiz</option>
+            <option value="Córdoba">Córdoba</option>
+            <option value="Granada">Granada</option>
+            <option value="Huelva">Huelva</option>
+            <option value="Jaén">Jaén</option>
+            <option value="Málaga">Málaga</option>
+            <option value="Sevilla">Sevilla</option>
+          </optgroup>
+          <optgroup label="Aragón">
+            <option value="Huesca">Huesca</option>
+            <option value="Teruel">Teruel</option>
+            <option value="Zaragoza">Zaragoza</option>
+          </optgroup>
+          <optgroup label="Asturias">
+            <option value="Avilés">Avilés</option>
+            <option value="Gijón">Gijón</option>
+            <option value="Oviedo">Oviedo</option>
+          </optgroup>
+          <optgroup label="Baleares">
+            <option value="Ibiza">Ibiza</option>
+            <option value="Mallorca">Mallorca</option>
+            <option value="Menorca">Menorca</option>
+          </optgroup>
+          <optgroup label="Canarias">
+            <option value="Las Palmas de Gran Canaria"
+              >Las Palmas de Gran Canaria</option
+            >
+            <option value="Santa Cruz de Tenerife"
+              >Santa Cruz de Tenerife</option
+            >
+          </optgroup>
+          <optgroup label="Cantabria">
+            <option value="Santander">Santander</option>
+            <option value="Torrelavega">Torrelavega</option>
+          </optgroup>
+          <optgroup label="Castilla-La Mancha">
+            <option value="Albacete">Albacete</option>
+            <option value="Ciudad Real">Ciudad Real</option>
+            <option value="Cuenca">Cuenca</option>
+            <option value="Guadalajara">Guadalajara</option>
+            <option value="Toledo">Toledo</option>
+          </optgroup>
+          <optgroup label="Castilla y León">
+            <option value="Ávila">Ávila</option>
+            <option value="Burgos">Burgos</option>
+            <option value="León">León</option>
+            <option value="Palencia">Palencia</option>
+            <option value="Salamanca">Salamanca</option>
+            <option value="Segovia">Segovia</option>
+            <option value="Soria">Soria</option>
+            <option value="Valladolid">Valladolid</option>
+            <option value="Zamora">Zamora</option>
+          </optgroup>
+          <optgroup label="Cataluña">
+            <option value="Barcelona">Barcelona</option>
+            <option value="Girona">Girona</option>
+            <option value="Lleida">Lleida</option>
+            <option value="Tarragona">Tarragona</option>
+          </optgroup>
+        </select>
+        <button type="submit" class="btn btn-primary">Buscar</button>
+      </form>
+    </div>
+  </body>
+</html>
+
+<!--
+  1)Crear en la base de datos diferentes anuncio o publicaciones y hacerlas ver
+ 2) HACER CON PHP:
+index.php -> dependiendo la opción escogida del menú mostrar 
+-->
